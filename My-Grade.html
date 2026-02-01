@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Student Information System > My Grade  </title>
+  <link rel="SHORTCUT ICON" href="http://studentinfo.aastu.edu.et/Portals/0/favicon.ico?ver=d_cC-nH9eHmqzKpxcS1E0A%3d%3d" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+    integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="text-white">
+    <div class="container-fluid">
+      <div class="row mx-auto p-2">
+        <div class="col-md-2">
+          <img class="img-fluid" src="./images/image.png" alt="aastu logo">
+        </div>
+        <div class="col-md-9 my-4">
+          <div class="text-start h4">Addis Ababa Science and Technology University Online Student Information Portal
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="bg-light border">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <span id="dateDisplay"></span>
+        </div>
+        <div class="col-md">
+          <a href="./index.html" class="nav-link">Home</a>
+        </div>
+        <div class="col-md">
+          <a href="./My-Grade.html" class="nav-link">My Grade</a>
+        </div>
+        <div class="col-md-2 d-md-flex justify-content-around">
+          <span id="account">Guest</span>
+          <a class="nav-link" href="./index.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 my-2">
+            <ul class="usl list-unstyled  p-3 shadow mb-5  rounded-4">
+            <li class="ht p-2 rounded fw-bold">Main Menu</li>
+            <li class="py-1"><i class="bi bi-caret-right-fill"></i><a href="./home.html"
+                class="text-decoration-none text-dark">Home</a></li>
+            <li class="py-1 list-home"><i class="bi bi-caret-right-fill"></i><a href="./My-Course.html"
+                class="text-decoration-none text-dark">My Course</a></li>
+            <li class="py-1 list-home"><i class="bi bi-caret-right-fill"></i><a href="./My-Status.html"
+                class="text-decoration-none text-dark">My Status</a></li>
+            <li class="py-1 list-home"><i class="bi bi-caret-right-fill"></i><a href="#"
+                class="text-decoration-none text-dark">My Grade</a></li>
+            <li class="py-1 list-home"><i class="bi bi-caret-right-fill"></i><a href="./My-Dormitory.html"
+                class="text-decoration-none text-dark">My Dormitory</a></li>
+            <li class="py-1"><i class="bi bi-caret-right-fill"></i><a href="#"
+                class="text-decoration-none text-dark">Graduated Students</a></li>
+            <li class="py-1"><i class="bi bi-caret-right-fill"></i><a href="https://www.aastu.edu.et/"
+                class="text-decoration-none text-dark">AASTU Web Site</a></li>
+
+
+
+
+
+          </ul>
+        </div>
+        <div class="st col-md px-1 shadow border border-top-0 mb-5">
+          <p class="ht p-2 px-3 small my-1 rounded-5">My Grades (to check if there are unremoved Fs, Is, NGs,... unregistered courses, exempted courses, waived courses.....)</p>
+ <table align="center" class="mx-auto mw-auto my-3">
+    <tr class="d-flex flex-wrap align-items-center mx-auto">
+      <td class="">
+        Choose Your Option <span class="style1">*: </span>
+      </td>
+      <td>
+        <select>
+          <option selected="selected" value="T">All Taken Courses</option>
+          <option value="I">Incomplete Courses</option>
+          <option value="F">Not Removed F Courses</option>
+          <option value="R">Remaining Unregistered Courses</option>
+          <option value="E">Exempted Courses</option>
+          <option value="W">Waived Courses</option>
+        </select>
+      </td>
+      <td>
+        <input type="submit" 
+          value="Search"/>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+          <div class="table-responsive my-2">
+            <table id="gradeTable" class="table table-bordered border-light table-striped table-hover align-middle ">
+
+  <thead class="table-primary" id="grade-table-head">
+    <tr>
+      <th>Course Code <i class="bi bi-caret-down-fill"></i></th>
+      <th>Course Title <i class="bi bi-caret-down-fill"></i></th>
+      <th>Credit <i class="bi bi-caret-down-fill"></i></th>
+      <th>Grade <i class="bi bi-caret-down-fill"></i></th>
+      <th>Category <i class="bi bi-caret-down-fill"></i></th>
+      <th>Remark <i class="bi bi-caret-down-fill"></i></th>
+    </tr>
+  </thead>
+  <tbody id="grade-table-body">
+    <tr><td>Phil1009</td><td>Logic and Critical Thinking</td><td>3</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+    <tr><td>Psyc1011</td><td>General Psychology</td><td>3</td><td class="grade">A</td><td>Common Course</td><td></td></tr>
+    <tr><td>FLEn1003</td><td>Communicative English Language Skills I</td><td>3</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+    <tr><td>GeEs1005</td><td>Geography of Ethiopia and the Horn</td><td>3</td><td class="grade">A+</td><td>Common Course</td><td></td></tr>
+    <tr><td>Math1007</td><td>Mathematics for Natural Science</td><td>3</td><td class="grade">A+</td><td>Common Course</td><td></td></tr>
+    <tr><td>SpSc1013</td><td>Physical Fitness</td><td>0</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+
+    <tr><td>Anth1002</td><td>Social Anthropology</td><td>2</td><td class="grade">A+</td><td>Common Course</td><td></td></tr>
+    <tr><td>Phys1001</td><td>General Physics</td><td>3</td><td class="grade">A</td><td>Common Course</td><td></td></tr>
+    <tr><td>FLEn1004</td><td>Communicative English Language Skills II</td><td>3</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+    <tr><td>MCiE1012</td><td>Moral and Civic Education</td><td>2</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+    <tr><td>Incl1010</td><td>Inclusiveness</td><td>2</td><td class="grade">A</td><td>Common Course</td><td></td></tr>
+
+    <tr><td>Entr1106</td><td>Entrepreneurship for Engineers</td><td>3</td><td class="grade">A+</td><td>Common Course</td><td></td></tr>
+    <tr><td>EmTe1108</td><td>Emerging Technology for Engineers</td><td>3</td><td class="grade">A+</td><td>Common Course</td><td></td></tr>
+    <tr><td>Math1014</td><td>Applied Mathematics IB</td><td>4</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+
+    <tr><td>SWEG2101</td><td>Introduction to Software Engineering and Computing</td><td>4</td><td class="grade">A</td><td>Supporting Course</td><td></td></tr>
+    <tr><td>SWEG2103</td><td>Fundamentals of Programming I</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG2105</td><td>Discrete Mathematics for Software Engineering</td><td>3</td><td class="grade">A</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>Hist2002</td><td>History of Ethiopia and the Horn</td><td>3</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+    <tr><td>GLTr2011</td><td>Global Trend</td><td>2</td><td class="grade">B</td><td>Common Course</td><td></td></tr>
+    <tr><td>Stat2091</td><td>Probability and Statistics</td><td>3</td><td class="grade">B</td><td>Common Course</td><td></td></tr>
+
+    <tr><td>Econ2009</td><td>Economics</td><td>3</td><td class="grade">A</td><td>Common Course</td><td></td></tr>
+    <tr><td>SWEG2102</td><td>Fundamentals of Programming II</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+    <tr><td>EEng2004</td><td>Digital Logic Design</td><td>3</td><td class="grade">A-</td><td>Common Course</td><td></td></tr>
+
+    <tr><td>SWEG2106</td><td>Data Communication and Computer Networks</td><td>4</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG2108</td><td>Database Systems</td><td>4</td><td class="grade">A</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>SWEG3103</td><td>Data Structure and Algorithms</td><td>4</td><td class="grade">A+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3105</td><td>Computer Organization and Architecture</td><td>4</td><td class="grade">A</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3107</td><td>Internet Programming I</td><td>3</td><td class="grade">A+</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>SWEG3101</td><td>Object Oriented Programming</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3109</td><td>System Analysis and Modeling</td><td>4</td><td class="grade">C+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3102</td><td>Internet Programming II</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>SWEG3104</td><td>Software Requirements Engineering</td><td>3</td><td class="grade">B+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3106</td><td>Operating Systems</td><td>4</td><td class="grade">A+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG3108</td><td>Advanced Programming</td><td>4</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>SWEG3110</td><td>Formal Language and Automata Theory</td><td>3</td><td class="grade">C+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG4101</td><td>Principles of Compiler Design</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+
+    <tr><td>SWEG4103</td><td>Mobile Computing and Programming</td><td>3</td><td class="grade">A</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG4105</td><td>Software Design and Architecture</td><td>3</td><td class="grade">A</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG4109</td><td>Computer Graphics</td><td>3</td><td class="grade">A+</td><td>Major Course</td><td></td></tr>
+    <tr><td>SWEG4107</td><td>Introduction to Artificial Intelligence</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+    <tr><td>IETP4115</td><td>Integrated Engineering Team Project</td><td>3</td><td class="grade">A-</td><td>Major Course</td><td></td></tr>
+  </tbody>
+</table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Online Student Information System > Home</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <p id="error" class="alert alert-danger hide">Login Failed. Please remember that passwords are case sensitive.</p>
+       <form class="p-3" id="form">
+              <div class="form-group row">
+                <label for="inputUsername3" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control my-1" id="inputUsername3" placeholder="ETS----/--">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control my-1" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+              <div class="d-flex justify-content-center w-75 my-2">
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                  <label class="form-check-label" for="autoSizingCheck">
+                    Remember Login
+                  </label>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center w-75">
+                <button id="loginBtn2" class="btn btn-md btn-primary mx-4 border">Login</button>
+                <button id="cancelBtn" class="btn btn-md btn-light mx-1 border">Cancel</button>
+              </div>
+              
+                <!-- Button trigger modal -->
+              <div class="d-flex justify-content-center w-75">
+                <button id="resetBtn3" type="button" class="btn btn-md btn-light my-3 border" data-bs-toggle="modal" data-bs-target="#resetModal">Reset Password</button>
+  
+              </div>
+            </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button id="exitBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Online Student Information System > Home</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="alert alert-success sm">If you forgot your password an email with a password reset link will be sent to you. Click on the link in that email and you will be taken to a page where you can then create a new password.</p>
+        <p id="sendError" class="alert alert-danger hide">Invalid username. Expected format: ETS----/--</p>
+        <div class="d-flex align-items-center">
+          <label for="inputUsername2" class="form-label mx-3 d-flex">Username: <i class="bi bi-info-circle-fill px-1 text-secondary"></i></label>
+          <input type="text" id="inputUsername2" class="form-control w-75">
+
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button id="sendBtn" type="button" class="btn btn-primary">Send Reset Link</button>
+        <button id="exitBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <footer class="bg-primary p-1 fixed-bottom">
+    <p class="text-white text-center my-auto">&copy 2026 AASTU Student Portal</p>
+  </footer>
+
+ <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+    <script src="validation.js"></script>
+     <script src="date.js"></script>
+</body>
+
+</html>

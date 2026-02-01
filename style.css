@@ -1,0 +1,46 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+nav {
+  background-color: #47B8F5
+;
+}
+#grade-table-head th,
+#grade-table-body td{
+  padding-left: 15px;
+}
+.hide{
+  display: none;
+}
+.block {
+  display: block;
+}
+.h4 {
+
+  text-shadow: -1px 3px 5px black,0 0 5px black;
+}
+ul li a:hover {
+  text-decoration: underline;
+}
+.ht {
+background: #75C1E3;
+background: linear-gradient(to top right, rgba(117, 193, 227, 1) 15%, rgba(142, 206, 233, 1) 53%, rgba(205, 240, 249, 1) 100%);
+}
+.st {
+  border-radius:0 0 15px 15px;
+}
+.usl li a:hover {
+ color: blue!important;
+}
+.usl li a:active {
+ color: red!important;
+}
+
+.list-main {
+  display: none;
+}
